@@ -1,4 +1,4 @@
-<!-- VERSIONE 52 · pagina page-res -->
+<!-- VERSIONE 53 · pagina page-res -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -1562,9 +1562,9 @@ body.lang-fr [data-lang="fr"]{display:inline}
     <span data-lang="es">Artistas y producciones destacadas</span>
     <span data-lang="fr">Artistes et productions marquantes</span></div></div>
     <div class="video-grid">
-      <a class="vcard" href="../works/"><div class="vbg" data-bg="../res-alex-britti.jpg" style=""></div><div class="vcontent"><div class="vtag"><span data-lang="it">Giugno</span><span data-lang="en">June</span>
+      <button class="vcard" onclick="openMedia(18)" aria-label="Alex Britti a Studio 33 - Rai1" style="border:none;padding:0;background:none;width:100%;text-align:left;font:inherit;color:inherit"><div class="vbg" data-bg="../res-alex-britti.jpg" style=""></div><div class="vcontent"><div class="vtag"><span data-lang="it">Giugno</span><span data-lang="en">June</span>
     <span data-lang="es">Junio</span>
-    <span data-lang="fr">Juin</span> 2025</div><div class="vname">Alex Britti</div></div></a>
+    <span data-lang="fr">Juin</span> 2025 · Rai1</div><div class="vname">Alex Britti</div></div></button>
       <a class="vcard" href="../works/"><div class="vbg" data-bg="../res-giorgio-poi.jpg" style=""></div><div class="vcontent"><div class="vtag"><span data-lang="it">Maggio</span><span data-lang="en">May</span>
     <span data-lang="es">Mayo</span>
     <span data-lang="fr">Mai</span> 2025</div><div class="vname">Giorgio Poi &amp; Luca Marinelli</div></div></a>
@@ -1788,17 +1788,30 @@ function lcScroll(dir){
 
 
 // ── HAPPENING: player unificato mp4 + YouTube ──
-var mediaList = [{"k": "yt", "id": "TAIl1kGzfgY"}, {"k": "yt", "id": "cAbYwjUUnNM"}, {"k": "yt", "id": "Ly_N43oBCjY"}, {"k": "yt", "id": "lToVif3BLOM"}, {"k": "yt", "id": "CyyuGcd8tzI"}, {"k": "yt", "id": "oFecVPRzqOk"}, {"k": "yt", "id": "BgwqRhtAS-E"}, {"k": "yt", "id": "vatRi9NDiOI"}, {"k": "yt", "id": "yDXAGZNv6ro"}, {"k": "yt", "id": "lKp_zMsbI-I"}, {"k": "yt", "id": "fHH1BdIk1X8"}, {"k": "yt", "id": "1KyvuRJh6tQ"}, {"k": "yt", "id": "WyDrpVguz28"}, {"k": "yt", "id": "6tKxVS9Fi8A"}, {"k": "yt", "id": "B6BxBXnB2pM"}, {"k": "yt", "id": "rFxvfyGsTyc"}, {"k": "yt", "id": "2wJ0v4LIan8"}, {"k": "vm", "id": "671685829"}];
+var mediaList = [{"k": "yt", "id": "TAIl1kGzfgY"}, {"k": "yt", "id": "cAbYwjUUnNM"}, {"k": "yt", "id": "Ly_N43oBCjY"}, {"k": "yt", "id": "lToVif3BLOM"}, {"k": "yt", "id": "CyyuGcd8tzI"}, {"k": "yt", "id": "oFecVPRzqOk"}, {"k": "yt", "id": "BgwqRhtAS-E"}, {"k": "yt", "id": "vatRi9NDiOI"}, {"k": "yt", "id": "yDXAGZNv6ro"}, {"k": "yt", "id": "lKp_zMsbI-I"}, {"k": "yt", "id": "fHH1BdIk1X8"}, {"k": "yt", "id": "1KyvuRJh6tQ"}, {"k": "yt", "id": "WyDrpVguz28"}, {"k": "yt", "id": "6tKxVS9Fi8A"}, {"k": "yt", "id": "B6BxBXnB2pM"}, {"k": "yt", "id": "rFxvfyGsTyc"}, {"k": "yt", "id": "2wJ0v4LIan8"}, {"k": "vm", "id": "671685829"}, {"k": "mp4", "id": "../alex-britti-rai1.mp4"}];
 function openMedia(i){
   var m = mediaList[i];
   if(!m || !m.id) return;
   var ov = document.getElementById('vmodal');
   var yt = document.getElementById('ytframe');
-  yt.style.display = 'block';
-  if(m.k === 'vm'){
-    yt.src = 'https://player.vimeo.com/video/' + m.id + '?autoplay=1';
+  var vid = document.getElementById('vidplayer');
+  if(m.k === 'mp4'){
+    yt.style.display = 'none';
+    yt.src = 'about:blank';
+    vid.style.display = 'block';
+    vid.src = m.id;
+    vid.play();
   } else {
-    yt.src = 'https://www.youtube-nocookie.com/embed/' + m.id + '?autoplay=1&rel=0';
+    vid.style.display = 'none';
+    vid.pause();
+    vid.removeAttribute('src');
+    vid.load();
+    yt.style.display = 'block';
+    if(m.k === 'vm'){
+      yt.src = 'https://player.vimeo.com/video/' + m.id + '?autoplay=1';
+    } else {
+      yt.src = 'https://www.youtube-nocookie.com/embed/' + m.id + '?autoplay=1&rel=0';
+    }
   }
   ov.classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -1848,7 +1861,9 @@ hstart();
 function closeVid(){
   var m = document.getElementById('vmodal');
   var y = document.getElementById('ytframe');
+  var vid = document.getElementById('vidplayer');
   if(y){ y.src = 'about:blank'; }
+  if(vid){ vid.pause(); vid.removeAttribute('src'); vid.load(); }
   m.classList.remove('open'); document.body.style.overflow='';
 }
 document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeVid(); });
@@ -1947,6 +1962,7 @@ document.addEventListener('keydown', function(e){if(e.key==='Escape')closeProjMo
     <span data-lang="es">Cerrar</span>
     <span data-lang="fr">Fermer</span></button>
     <iframe id="ytframe" title="Video Studio 33" style="display:none;width:100%;aspect-ratio:16/9;border:none;background:#000" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
+    <video id="vidplayer" style="display:none;width:100%;max-height:80vh;background:#000" controls playsinline></video>
   </div>
 </div>
 </body>
