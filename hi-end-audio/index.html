@@ -1,4 +1,4 @@
-<!-- VERSIONE 43 · pagina page-audio -->
+<!-- VERSIONE 44 · pagina page-audio -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -232,9 +232,10 @@ body.lang-en [data-lang="block-it"]{display:none}
   .statement-text{font-size:31.0px}
   /* Tweet */
   .tweet-text{font-size:20.0px}
-  /* Banner draft: più compatto su mobile */
-  #draft-banner{padding:.7rem 1rem!important}
-  #draft-banner > div{font-size:13.0px!important}
+  /* Cookie banner: più compatto su mobile */
+  #cookie-banner{padding:.7rem 1rem!important}
+  #cookie-banner > div{font-size:13.0px!important}
+  #cookie-banner .cb-actions{width:100%;justify-content:flex-end}
 }
 
 /* ── SMARTPHONE PICCOLI (≤480px) ── */
@@ -313,10 +314,13 @@ body.lang-en [data-lang="block-it"]{display:none}
 .vcontent .vdate{color:rgba(255,255,255,0.35)!important}
 
 /* ── BANNER GDPR: mantieni scuro ── */
-#draft-banner{background:rgba(20,20,20,.97)!important}
-#draft-banner *{color:rgba(255,255,255,0.72)!important}
-#draft-banner strong{color:#fff!important}
-#draft-banner button{color:#fff!important;border-color:rgba(255,255,255,0.35)!important}
+#cookie-banner{background:rgba(20,20,20,.97)!important}
+#cookie-banner *{color:rgba(255,255,255,0.72)!important}
+#cookie-banner strong{color:#fff!important}
+#cookie-banner button{color:#fff!important;border-color:rgba(255,255,255,0.35)!important}
+#cookie-banner .cb-accept,#cookie-banner .cb-accept *{background:#fff!important;color:#1a1a1a!important;border-color:#fff!important}
+#cookie-banner .cb-accept:hover{opacity:.85}
+#cookie-banner .cb-reject:hover{border-color:rgba(255,255,255,0.7)!important}
 
 /* ── VIDEO CARD FIX ── */
 .video-grid{display:grid;grid-template-columns:2fr 1fr 1fr;border-bottom:var(--bd);align-items:stretch}
@@ -548,9 +552,9 @@ blockquote{font-weight:300;letter-spacing:-.02em;line-height:1.35}
 #btt{display:none}
 #wa-fixed{width:46px;height:46px;bottom:2rem;right:2rem;box-shadow:none;border:1px solid rgba(26,26,26,0.06)}
 
-/* 13. Banner bozza: minimo ingombro */
-#draft-banner{padding:.65rem 1.6rem!important}
-#draft-banner>div{font-size:11.5px!important;line-height:1.45!important}
+/* 13. Cookie banner: minimo ingombro */
+#cookie-banner{padding:.65rem 1.6rem!important}
+#cookie-banner>div{font-size:11.5px!important;line-height:1.45!important}
 
 @media(max-width:900px){
   .hero-body{padding:0 1.5rem 3rem}
@@ -1237,19 +1241,22 @@ body.lang-fr [data-lang="fr"]{display:inline}
 </head>
 <body class="lang-it">
 
-<!-- ══ BANNER BOZZA + PRIVACY (GDPR) — dismissibile, nessun cookie ══ -->
-<div id="draft-banner" style="position:fixed;bottom:0;left:0;right:0;z-index:9999;background:rgba(14,14,14,.97);backdrop-filter:blur(10px);border-top:.5px solid rgba(26,26,26,0.74);padding:.9rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:var(--fb)">
+<!-- ══ COOKIE BANNER — consenso richiesto all'ingresso (GDPR) ══ -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:rgba(14,14,14,.97);backdrop-filter:blur(10px);border-top:.5px solid rgba(26,26,26,0.74);padding:.9rem 1.5rem;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:var(--fb)">
   <div style="font-size:17.0px;line-height:1.5;color:rgba(26,26,26,0.88);max-width:760px">
-    <span data-lang="it"><strong style="color:#1a1a1a;letter-spacing:.05em">ANTEPRIMA / BOZZA</strong> — Restyling non ufficiale a scopo dimostrativo. Questa pagina carica font (Google Fonts), icone (jsDelivr) e immagini (WordPress.com): tali servizi possono ricevere il tuo indirizzo IP. Nessun cookie, tracker o raccolta dati è attivo su questa bozza.</span>
-    <span data-lang="en"><strong style="color:#1a1a1a;letter-spacing:.05em">PREVIEW / DRAFT</strong> — Unofficial restyling for demo purposes. This page loads fonts (Google Fonts), icons (jsDelivr) and images (WordPress.com): these services may receive your IP address. No cookies, trackers or data collection are active on this draft.</span>
-    <span data-lang="es"><strong style="color:#1a1a1a;letter-spacing:.05em">VISTA PREVIA / BORRADOR</strong> — Rediseño no oficial con fines demostrativos. Esta página carga fuentes (Google Fonts), iconos (jsDelivr) e imágenes (WordPress.com): dichos servicios pueden recibir tu dirección IP. No hay cookies, rastreadores ni recopilación de datos en este borrador.</span>
-    <span data-lang="fr"><strong style="color:#1a1a1a;letter-spacing:.05em">APERÇU / BROUILLON</strong> — Refonte non officielle à but démonstratif. Cette page charge des polices (Google Fonts), des icônes (jsDelivr) et des images (WordPress.com) : ces services peuvent recevoir votre adresse IP. Aucun cookie, traceur ou collecte de données sur ce brouillon.</span>
+    <span data-lang="it">Utilizziamo cookie tecnici necessari e cookie di terze parti (Google Fonts, YouTube, mappe) per offrirti la migliore esperienza di navigazione. Puoi accettarli tutti o rifiutare quelli non essenziali. Consulta la nostra <a href="../privacy/" style="color:inherit;text-decoration:underline">Privacy Policy</a>.</span>
+    <span data-lang="en">We use necessary technical cookies and third-party cookies (Google Fonts, YouTube, maps) to give you the best browsing experience. You can accept them all or reject the non-essential ones. Read our <a href="../privacy/" style="color:inherit;text-decoration:underline">Privacy Policy</a>.</span>
+    <span data-lang="es">Utilizamos cookies técnicas necesarias y cookies de terceros (Google Fonts, YouTube, mapas) para ofrecerte la mejor experiencia de navegación. Puedes aceptarlas todas o rechazar las no esenciales. Consulta nuestra <a href="../privacy/" style="color:inherit;text-decoration:underline">Política de Privacidad</a>.</span>
+    <span data-lang="fr">Nous utilisons des cookies techniques nécessaires et des cookies tiers (Google Fonts, YouTube, cartes) pour vous offrir la meilleure expérience de navigation. Vous pouvez tous les accepter ou refuser ceux qui ne sont pas essentiels. Consultez notre <a href="../privacy/" style="color:inherit;text-decoration:underline">Politique de Confidentialité</a>.</span>
   </div>
-  <button onclick="document.getElementById('draft-banner').style.display='none';return false" style="flex-shrink:0;font-family:var(--fb);font-size:14.5px;letter-spacing:.2em;text-transform:uppercase;color:#1a1a1a;background:none;border:.5px solid rgba(26,26,26,0.88);padding:.45rem 1rem;cursor:pointer;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(26,26,26,0.62)'" onmouseout="this.style.borderColor='rgba(26,26,26,0.62)'" aria-label="Chiudi avviso">
-    <span data-lang="it">Ho capito</span><span data-lang="en">Got it</span>
-    <span data-lang="es">Entendido</span>
-    <span data-lang="fr">J'ai compris</span>
-  </button>
+  <div class="cb-actions" style="display:flex;gap:.6rem;flex-shrink:0">
+    <button onclick="s33CookieSet('rejected')" class="cb-reject" style="font-family:var(--fb);font-size:14.5px;letter-spacing:.2em;text-transform:uppercase;background:none;border:.5px solid rgba(255,255,255,0.35);padding:.45rem 1rem;cursor:pointer;transition:border-color .2s" aria-label="Rifiuta i cookie non necessari">
+      <span data-lang="it">Rifiuta</span><span data-lang="en">Reject</span><span data-lang="es">Rechazar</span><span data-lang="fr">Refuser</span>
+    </button>
+    <button onclick="s33CookieSet('accepted')" class="cb-accept" style="font-family:var(--fb);font-size:14.5px;letter-spacing:.2em;text-transform:uppercase;background:#fff;color:#1a1a1a;border:.5px solid #fff;padding:.45rem 1rem;cursor:pointer;transition:opacity .2s" aria-label="Accetta tutti i cookie">
+      <span data-lang="it">Accetta</span><span data-lang="en">Accept</span><span data-lang="es">Aceptar</span><span data-lang="fr">Accepter</span>
+    </button>
+  </div>
 </div>
 
 
@@ -1779,12 +1786,6 @@ body.lang-fr [data-lang="fr"]{display:inline}
       <a href="../privacy/" style="font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(26,26,26,0.48);margin-left:1.5rem">Privacy Policy</a>
     
   </div>
-  <div style="font-family:var(--fb);font-size:13.0px;line-height:1.7;color:rgba(26,26,26,0.74);border-top:.5px solid rgba(26,26,26,0.62);padding-top:1rem">
-    <span data-lang="it">Bozza dimostrativa di restyling — non affiliata né approvata ufficialmente. Immagini e contenuti © dei rispettivi proprietari, mostrati a solo scopo illustrativo. Questa anteprima non raccoglie dati personali, non usa cookie e non effettua profilazione. Risorse esterne (Google Fonts, jsDelivr, WordPress.com CDN) sono caricate per il rendering e possono registrare l'indirizzo IP secondo le rispettive informative privacy.</span>
-    <span data-lang="en">Demonstration restyling draft — not officially affiliated or approved. Images and content © their respective owners, shown for illustrative purposes only. This preview collects no personal data, uses no cookies and performs no profiling. External resources (Google Fonts, jsDelivr, WordPress.com CDN) are loaded for rendering and may log your IP address per their respective privacy policies.</span>
-    <span data-lang="es">Borrador demostrativo de rediseño — no afiliado ni aprobado oficialmente. Imágenes y contenidos © de sus respectivos propietarios, mostrados solo con fines ilustrativos. Esta vista previa no recoge datos personales, no usa cookies y no realiza perfilado. Los recursos externos (Google Fonts, jsDelivr, WordPress.com CDN) se cargan para la representación y pueden registrar la dirección IP según sus respectivas políticas de privacidad.</span>
-    <span data-lang="fr">Brouillon de refonte à but démonstratif — non affilié ni approuvé officiellement. Images et contenus © de leurs propriétaires respectifs, présentés à titre illustratif uniquement. Cet aperçu ne collecte aucune donnée personnelle, n'utilise pas de cookies et n'effectue aucun profilage. Les ressources externes (Google Fonts, jsDelivr, WordPress.com CDN) sont chargées pour l'affichage et peuvent enregistrer l'adresse IP selon leurs politiques de confidentialité respectives.</span>
-  </div>
 </footer>
 
 <script>
@@ -1828,6 +1829,20 @@ document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeDraw
   var saved = null;
   try { saved = sessionStorage.getItem('s33lang'); } catch(e) {}
   setLang(['it','en','es','fr'].indexOf(saved) >= 0 ? saved : 'it');
+})();
+
+// ── COOKIE CONSENT ──
+(function(){
+  var KEY = 's33cookieConsent';
+  var el = document.getElementById('cookie-banner');
+  if(!el) return;
+  var saved = null;
+  try { saved = localStorage.getItem(KEY); } catch(e) {}
+  if(saved !== 'accepted' && saved !== 'rejected'){ el.style.display = 'flex'; }
+  window.s33CookieSet = function(val){
+    try { localStorage.setItem(KEY, val); } catch(e) {}
+    el.style.display = 'none';
+  };
 })();
 
 // ── AUTOPLAY caroselli Location e Formazione ──
@@ -1965,12 +1980,6 @@ document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeVid(
     e.preventDefault();
     var btn = document.getElementById('bk-btn');
     var action = form.getAttribute('action');
-    if(action.indexOf('xkjwkybq') !== -1){
-      var msg = document.body.classList.contains('lang-en')
-        ? 'Form not connected yet. Email shout@studio33club.com or WhatsApp +39 334 7029456'
-        : 'Form non ancora collegato. Scrivi a shout@studio33club.com o via WhatsApp +39 334 7029456';
-      alert(msg); return;
-    }
     btn.disabled = true;
     fetch(action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
       .then(function(r){
