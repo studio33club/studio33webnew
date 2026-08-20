@@ -1,4 +1,4 @@
-<!-- VERSIONE 43 · pagina page-privacy -->
+<!-- VERSIONE 44 · pagina page-privacy -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -232,9 +232,10 @@ body.lang-en [data-lang="block-it"]{display:none}
   .statement-text{font-size:31.0px}
   /* Tweet */
   .tweet-text{font-size:20.0px}
-  /* Banner draft: più compatto su mobile */
-  #draft-banner{padding:.7rem 1rem!important}
-  #draft-banner > div{font-size:13.0px!important}
+  /* Cookie banner: più compatto su mobile */
+  #cookie-banner{padding:.7rem 1rem!important}
+  #cookie-banner > div{font-size:13.0px!important}
+  #cookie-banner .cb-actions{width:100%;justify-content:flex-end}
 }
 
 /* ── SMARTPHONE PICCOLI (≤480px) ── */
@@ -313,10 +314,13 @@ body.lang-en [data-lang="block-it"]{display:none}
 .vcontent .vdate{color:rgba(255,255,255,0.35)!important}
 
 /* ── BANNER GDPR: mantieni scuro ── */
-#draft-banner{background:rgba(20,20,20,.97)!important}
-#draft-banner *{color:rgba(255,255,255,0.72)!important}
-#draft-banner strong{color:#fff!important}
-#draft-banner button{color:#fff!important;border-color:rgba(255,255,255,0.35)!important}
+#cookie-banner{background:rgba(20,20,20,.97)!important}
+#cookie-banner *{color:rgba(255,255,255,0.72)!important}
+#cookie-banner strong{color:#fff!important}
+#cookie-banner button{color:#fff!important;border-color:rgba(255,255,255,0.35)!important}
+#cookie-banner .cb-accept,#cookie-banner .cb-accept *{background:#fff!important;color:#1a1a1a!important;border-color:#fff!important}
+#cookie-banner .cb-accept:hover{opacity:.85}
+#cookie-banner .cb-reject:hover{border-color:rgba(255,255,255,0.7)!important}
 
 /* ── VIDEO CARD FIX ── */
 .video-grid{display:grid;grid-template-columns:2fr 1fr 1fr;border-bottom:var(--bd);align-items:stretch}
@@ -548,9 +552,9 @@ blockquote{font-weight:300;letter-spacing:-.02em;line-height:1.35}
 #btt{display:none}
 #wa-fixed{width:46px;height:46px;bottom:2rem;right:2rem;box-shadow:none;border:1px solid rgba(26,26,26,0.06)}
 
-/* 13. Banner bozza: minimo ingombro */
-#draft-banner{padding:.65rem 1.6rem!important}
-#draft-banner>div{font-size:11.5px!important;line-height:1.45!important}
+/* 13. Cookie banner: minimo ingombro */
+#cookie-banner{padding:.65rem 1.6rem!important}
+#cookie-banner>div{font-size:11.5px!important;line-height:1.45!important}
 
 @media(max-width:900px){
   .hero-body{padding:0 1.5rem 3rem}
@@ -1237,19 +1241,22 @@ body.lang-fr [data-lang="fr"]{display:inline}
 </head>
 <body class="lang-it">
 
-<!-- ══ BANNER BOZZA + PRIVACY (GDPR) — dismissibile, nessun cookie ══ -->
-<div id="draft-banner" style="position:fixed;bottom:0;left:0;right:0;z-index:9999;background:rgba(14,14,14,.97);backdrop-filter:blur(10px);border-top:.5px solid rgba(26,26,26,0.74);padding:.9rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:var(--fb)">
+<!-- ══ COOKIE BANNER — consenso richiesto all'ingresso (GDPR) ══ -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:rgba(14,14,14,.97);backdrop-filter:blur(10px);border-top:.5px solid rgba(26,26,26,0.74);padding:.9rem 1.5rem;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:var(--fb)">
   <div style="font-size:17.0px;line-height:1.5;color:rgba(26,26,26,0.88);max-width:760px">
-    <span data-lang="it"><strong style="color:#1a1a1a;letter-spacing:.05em">ANTEPRIMA / BOZZA</strong> — Restyling non ufficiale a scopo dimostrativo. Questa pagina carica font (Google Fonts), icone (jsDelivr) e immagini (WordPress.com): tali servizi possono ricevere il tuo indirizzo IP. Nessun cookie, tracker o raccolta dati è attivo su questa bozza.</span>
-    <span data-lang="en"><strong style="color:#1a1a1a;letter-spacing:.05em">PREVIEW / DRAFT</strong> — Unofficial restyling for demo purposes. This page loads fonts (Google Fonts), icons (jsDelivr) and images (WordPress.com): these services may receive your IP address. No cookies, trackers or data collection are active on this draft.</span>
-    <span data-lang="es"><strong style="color:#1a1a1a;letter-spacing:.05em">VISTA PREVIA / BORRADOR</strong> — Rediseño no oficial con fines demostrativos. Esta página carga fuentes (Google Fonts), iconos (jsDelivr) e imágenes (WordPress.com): dichos servicios pueden recibir tu dirección IP. No hay cookies, rastreadores ni recopilación de datos en este borrador.</span>
-    <span data-lang="fr"><strong style="color:#1a1a1a;letter-spacing:.05em">APERÇU / BROUILLON</strong> — Refonte non officielle à but démonstratif. Cette page charge des polices (Google Fonts), des icônes (jsDelivr) et des images (WordPress.com) : ces services peuvent recevoir votre adresse IP. Aucun cookie, traceur ou collecte de données sur ce brouillon.</span>
+    <span data-lang="it">Utilizziamo cookie tecnici necessari e cookie di terze parti (Google Fonts, YouTube, mappe) per offrirti la migliore esperienza di navigazione. Puoi accettarli tutti o rifiutare quelli non essenziali. Consulta la nostra <a href="../privacy/" style="color:inherit;text-decoration:underline">Privacy Policy</a>.</span>
+    <span data-lang="en">We use necessary technical cookies and third-party cookies (Google Fonts, YouTube, maps) to give you the best browsing experience. You can accept them all or reject the non-essential ones. Read our <a href="../privacy/" style="color:inherit;text-decoration:underline">Privacy Policy</a>.</span>
+    <span data-lang="es">Utilizamos cookies técnicas necesarias y cookies de terceros (Google Fonts, YouTube, mapas) para ofrecerte la mejor experiencia de navegación. Puedes aceptarlas todas o rechazar las no esenciales. Consulta nuestra <a href="../privacy/" style="color:inherit;text-decoration:underline">Política de Privacidad</a>.</span>
+    <span data-lang="fr">Nous utilisons des cookies techniques nécessaires et des cookies tiers (Google Fonts, YouTube, cartes) pour vous offrir la meilleure expérience de navigation. Vous pouvez tous les accepter ou refuser ceux qui ne sont pas essentiels. Consultez notre <a href="../privacy/" style="color:inherit;text-decoration:underline">Politique de Confidentialité</a>.</span>
   </div>
-  <button onclick="document.getElementById('draft-banner').style.display='none';return false" style="flex-shrink:0;font-family:var(--fb);font-size:14.5px;letter-spacing:.2em;text-transform:uppercase;color:#1a1a1a;background:none;border:.5px solid rgba(26,26,26,0.88);padding:.45rem 1rem;cursor:pointer;transition:border-color .2s" onmouseover="this.style.borderColor='rgba(26,26,26,0.62)'" onmouseout="this.style.borderColor='rgba(26,26,26,0.62)'" aria-label="Chiudi avviso">
-    <span data-lang="it">Ho capito</span><span data-lang="en">Got it</span>
-    <span data-lang="es">Entendido</span>
-    <span data-lang="fr">J'ai compris</span>
-  </button>
+  <div class="cb-actions" style="display:flex;gap:.6rem;flex-shrink:0">
+    <button onclick="s33CookieSet('rejected')" class="cb-reject" style="font-family:var(--fb);font-size:14.5px;letter-spacing:.2em;text-transform:uppercase;background:none;border:.5px solid rgba(255,255,255,0.35);padding:.45rem 1rem;cursor:pointer;transition:border-color .2s" aria-label="Rifiuta i cookie non necessari">
+      <span data-lang="it">Rifiuta</span><span data-lang="en">Reject</span><span data-lang="es">Rechazar</span><span data-lang="fr">Refuser</span>
+    </button>
+    <button onclick="s33CookieSet('accepted')" class="cb-accept" style="font-family:var(--fb);font-size:14.5px;letter-spacing:.2em;text-transform:uppercase;background:#fff;color:#1a1a1a;border:.5px solid #fff;padding:.45rem 1rem;cursor:pointer;transition:opacity .2s" aria-label="Accetta tutti i cookie">
+      <span data-lang="it">Accetta</span><span data-lang="en">Accept</span><span data-lang="es">Aceptar</span><span data-lang="fr">Accepter</span>
+    </button>
+  </div>
 </div>
 
 
@@ -1425,7 +1432,7 @@ body.lang-fr [data-lang="fr"]{display:inline}
     <span data-lang="es">Tus datos no serán utilizados con fines de marketing, ni cedidos ni vendidos a terceros.</span>
     <span data-lang="fr">Vos données ne seront pas utilisées à des fins de marketing, ni cédées ni vendues à des tiers.</span></p>
 
-    <h2><span data-lang="it">Servizi di terze parti</span><span data-lang="en">Third-party services</span>
+    <h2 id="servizi"><span data-lang="it">Servizi di terze parti</span><span data-lang="en">Third-party services</span>
     <span data-lang="es">Servicios de terceros</span>
     <span data-lang="fr">Services tiers</span></h2>
     <p><span data-lang="it">Per il funzionamento del sito ci appoggiamo ad alcuni servizi esterni che possono registrare il tuo indirizzo IP:</span><span data-lang="en">To run this website we rely on external services that may log your IP address:</span>
@@ -1514,10 +1521,70 @@ body.lang-fr [data-lang="fr"]{display:inline}
     <span data-lang="es">Para ejercerlos escribe a <a href="mailto:shout@studio33club.com">shout@studio33club.com</a>. Tienes además derecho a presentar una reclamación ante el <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garante para la protección de los datos personales</a>.</span>
     <span data-lang="fr">Pour les exercer, écrivez à <a href="mailto:shout@studio33club.com">shout@studio33club.com</a>. Vous avez également le droit d'introduire une réclamation auprès du <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garant pour la protection des données personnelles</a>.</span></p>
 
-    <h2>Cookie</h2>
-    <p><span data-lang="it">Questo sito non installa cookie di profilazione né di terze parti a fini pubblicitari. Viene utilizzato esclusivamente un archivio tecnico di sessione per ricordare la lingua selezionata durante la navigazione, che si cancella alla chiusura del browser e non richiede consenso.</span><span data-lang="en">This site installs no profiling or third-party advertising cookies. It only uses a technical session storage to remember the language selected while browsing, which is cleared when the browser closes and requires no consent.</span>
-    <span data-lang="es">Este sitio no instala cookies de perfilado ni de terceros con fines publicitarios. Se utiliza exclusivamente un almacenamiento técnico de sesión para recordar el idioma seleccionado durante la navegación, que se borra al cerrar el navegador y no requiere consentimiento.</span>
-    <span data-lang="fr">Ce site n'installe aucun cookie de profilage ni de tiers à des fins publicitaires. Seul un stockage technique de session est utilisé pour mémoriser la langue choisie pendant la navigation ; il est effacé à la fermeture du navigateur et ne requiert aucun consentement.</span></p>
+    <h2><span data-lang="it">Cookie</span><span data-lang="en">Cookies</span>
+    <span data-lang="es">Cookies</span>
+    <span data-lang="fr">Cookies</span></h2>
+    <p><span data-lang="it">Questo sito non installa cookie di profilazione né cookie di terze parti a fini pubblicitari. All'ingresso ti chiediamo comunque di accettare o rifiutare l'uso di cookie tecnici e di eventuali servizi di terze parti tramite un banner: la tua scelta viene salvata sul dispositivo e non ti verrà richiesta di nuovo, finché non la revochi.</span><span data-lang="en">This site installs no profiling or third-party advertising cookies. When you arrive we still ask you to accept or reject the use of technical cookies and any third-party services via a banner: your choice is saved on your device and won't be asked again until you withdraw it.</span>
+    <span data-lang="es">Este sitio no instala cookies de perfilado ni cookies de terceros con fines publicitarios. Al entrar te pedimos igualmente que aceptes o rechaces el uso de cookies técnicas y de posibles servicios de terceros mediante un banner: tu elección se guarda en el dispositivo y no se te volverá a pedir hasta que la revoques.</span>
+    <span data-lang="fr">Ce site n'installe aucun cookie de profilage ni cookie tiers à des fins publicitaires. À votre arrivée, nous vous demandons tout de même d'accepter ou de refuser l'utilisation de cookies techniques et d'éventuels services tiers via une bannière : votre choix est enregistré sur votre appareil et ne vous sera plus demandé, jusqu'à ce que vous le retiriez.</span></p>
+
+    <table class="pp-table">
+      <thead>
+        <tr>
+          <th><span data-lang="it">Nome</span><span data-lang="en">Name</span>
+    <span data-lang="es">Nombre</span>
+    <span data-lang="fr">Nom</span></th>
+          <th><span data-lang="it">Tipo</span><span data-lang="en">Type</span>
+    <span data-lang="es">Tipo</span>
+    <span data-lang="fr">Type</span></th>
+          <th><span data-lang="it">Finalità</span><span data-lang="en">Purpose</span>
+    <span data-lang="es">Finalidad</span>
+    <span data-lang="fr">Finalité</span></th>
+          <th><span data-lang="it">Durata</span><span data-lang="en">Duration</span>
+    <span data-lang="es">Duración</span>
+    <span data-lang="fr">Durée</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>s33cookieConsent</td>
+          <td><span data-lang="it">Tecnico, necessario</span><span data-lang="en">Technical, necessary</span>
+    <span data-lang="es">Técnico, necesario</span>
+    <span data-lang="fr">Technique, nécessaire</span></td>
+          <td><span data-lang="it">Memorizza la tua scelta sul banner cookie</span><span data-lang="en">Stores your choice on the cookie banner</span>
+    <span data-lang="es">Almacena tu elección en el banner de cookies</span>
+    <span data-lang="fr">Enregistre votre choix sur la bannière de cookies</span></td>
+          <td><span data-lang="it">Fino a revoca manuale</span><span data-lang="en">Until manually withdrawn</span>
+    <span data-lang="es">Hasta revocación manual</span>
+    <span data-lang="fr">Jusqu'à révocation manuelle</span></td>
+        </tr>
+        <tr>
+          <td>s33lang</td>
+          <td><span data-lang="it">Tecnico, necessario</span><span data-lang="en">Technical, necessary</span>
+    <span data-lang="es">Técnico, necesario</span>
+    <span data-lang="fr">Technique, nécessaire</span></td>
+          <td><span data-lang="it">Memorizza la lingua selezionata durante la navigazione</span><span data-lang="en">Stores the language selected while browsing</span>
+    <span data-lang="es">Almacena el idioma seleccionado durante la navegación</span>
+    <span data-lang="fr">Enregistre la langue sélectionnée pendant la navigation</span></td>
+          <td><span data-lang="it">Fino a chiusura del browser</span><span data-lang="en">Until the browser is closed</span>
+    <span data-lang="es">Hasta cerrar el navegador</span>
+    <span data-lang="fr">Jusqu'à la fermeture du navigateur</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><span data-lang="it">I font (rsms.me), le icone (jsDelivr) e le immagini (WordPress.com CDN) si caricano automaticamente a ogni visita, indipendentemente dalla tua scelta sul banner: sono necessari per mostrare correttamente la pagina e non installano cookie di profilazione — vedi la sezione <a href="#servizi">Servizi di terze parti</a> qui sopra per il dettaglio. I video YouTube incorporati nelle pagine Home e Works vengono invece caricati solo quando li apri volontariamente, tramite il dominio a privacy rafforzata <code>youtube-nocookie.com</code>, che riduce al minimo l'uso di cookie da parte di Google prima dell'avvio della riproduzione.</span><span data-lang="en">Fonts (rsms.me), icons (jsDelivr) and images (WordPress.com CDN) load automatically on every visit, regardless of your choice on the banner: they are required to display the page correctly and install no profiling cookies — see the <a href="#servizi">Third-party services</a> section above for details. YouTube videos embedded on the Home and Works pages, instead, load only when you open them yourself, via the privacy-enhanced domain <code>youtube-nocookie.com</code>, which minimises Google's use of cookies before playback starts.</span>
+    <span data-lang="es">Las fuentes (rsms.me), los iconos (jsDelivr) y las imágenes (WordPress.com CDN) se cargan automáticamente en cada visita, independientemente de tu elección en el banner: son necesarios para mostrar correctamente la página y no instalan cookies de perfilado — consulta la sección <a href="#servizi">Servicios de terceros</a> más arriba para el detalle. Los vídeos de YouTube incorporados en las páginas Home y Works, en cambio, se cargan solo cuando los abres voluntariamente, a través del dominio de privacidad reforzada <code>youtube-nocookie.com</code>, que minimiza el uso de cookies por parte de Google antes de que comience la reproducción.</span>
+    <span data-lang="fr">Les polices (rsms.me), les icônes (jsDelivr) et les images (WordPress.com CDN) se chargent automatiquement à chaque visite, quel que soit votre choix sur la bannière : elles sont nécessaires à l'affichage correct de la page et n'installent aucun cookie de profilage — voir la section « Services tiers » ci-dessus pour le détail. Les vidéos YouTube intégrées sur les pages Home et Works, en revanche, ne se chargent que lorsque vous les ouvrez volontairement, via le domaine à confidentialité renforcée <code>youtube-nocookie.com</code>, qui réduit au minimum l'usage de cookies par Google avant le lancement de la lecture.</span></p>
+
+    <p><span data-lang="it">Puoi cambiare idea in qualsiasi momento e far ricomparire il banner:</span><span data-lang="en">You can change your mind at any time and make the banner reappear:</span>
+    <span data-lang="es">Puedes cambiar de opinión en cualquier momento y hacer que el banner reaparezca:</span>
+    <span data-lang="fr">Vous pouvez changer d'avis à tout moment et faire réapparaître la bannière :</span></p>
+    <button class="btn" onclick="try{localStorage.removeItem('s33cookieConsent');}catch(e){} location.reload()" style="margin-bottom:1rem;cursor:pointer;background:none">
+      <span data-lang="it">Gestisci preferenze cookie</span><span data-lang="en">Manage cookie preferences</span>
+      <span data-lang="es">Gestionar preferencias de cookies</span>
+      <span data-lang="fr">Gérer les préférences de cookies</span>
+    </button>
 
     <h2><span data-lang="it">Modifiche a questa informativa</span><span data-lang="en">Changes to this notice</span>
     <span data-lang="es">Modificaciones de esta política</span>
@@ -1545,12 +1612,6 @@ body.lang-fr [data-lang="fr"]{display:inline}
     <span class="footer-copy">© 2025–2030 The Lens srls — P.IVA IT16132211000</span>
       <a href="../privacy/" style="font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(26,26,26,0.48);margin-left:1.5rem">Privacy Policy</a>
     
-  </div>
-  <div style="font-family:var(--fb);font-size:13.0px;line-height:1.7;color:rgba(26,26,26,0.74);border-top:.5px solid rgba(26,26,26,0.62);padding-top:1rem">
-    <span data-lang="it">Bozza dimostrativa di restyling — non affiliata né approvata ufficialmente. Immagini e contenuti © dei rispettivi proprietari, mostrati a solo scopo illustrativo. Questa anteprima non raccoglie dati personali, non usa cookie e non effettua profilazione. Risorse esterne (Google Fonts, jsDelivr, WordPress.com CDN) sono caricate per il rendering e possono registrare l'indirizzo IP secondo le rispettive informative privacy.</span>
-    <span data-lang="en">Demonstration restyling draft — not officially affiliated or approved. Images and content © their respective owners, shown for illustrative purposes only. This preview collects no personal data, uses no cookies and performs no profiling. External resources (Google Fonts, jsDelivr, WordPress.com CDN) are loaded for rendering and may log your IP address per their respective privacy policies.</span>
-    <span data-lang="es">Borrador demostrativo de rediseño — no afiliado ni aprobado oficialmente. Imágenes y contenidos © de sus respectivos propietarios, mostrados solo con fines ilustrativos. Esta vista previa no recoge datos personales, no usa cookies y no realiza perfilado. Los recursos externos (Google Fonts, jsDelivr, WordPress.com CDN) se cargan para la representación y pueden registrar la dirección IP según sus respectivas políticas de privacidad.</span>
-    <span data-lang="fr">Brouillon de refonte à but démonstratif — non affilié ni approuvé officiellement. Images et contenus © de leurs propriétaires respectifs, présentés à titre illustratif uniquement. Cet aperçu ne collecte aucune donnée personnelle, n'utilise pas de cookies et n'effectue aucun profilage. Les ressources externes (Google Fonts, jsDelivr, WordPress.com CDN) sont chargées pour l'affichage et peuvent enregistrer l'adresse IP selon leurs politiques de confidentialité respectives.</span>
   </div>
 </footer>
 
@@ -1595,6 +1656,20 @@ document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeDraw
   var saved = null;
   try { saved = sessionStorage.getItem('s33lang'); } catch(e) {}
   setLang(['it','en','es','fr'].indexOf(saved) >= 0 ? saved : 'it');
+})();
+
+// ── COOKIE CONSENT ──
+(function(){
+  var KEY = 's33cookieConsent';
+  var el = document.getElementById('cookie-banner');
+  if(!el) return;
+  var saved = null;
+  try { saved = localStorage.getItem(KEY); } catch(e) {}
+  if(saved !== 'accepted' && saved !== 'rejected'){ el.style.display = 'flex'; }
+  window.s33CookieSet = function(val){
+    try { localStorage.setItem(KEY, val); } catch(e) {}
+    el.style.display = 'none';
+  };
 })();
 
 // ── AUTOPLAY caroselli Location e Formazione ──
@@ -1732,12 +1807,6 @@ document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeVid(
     e.preventDefault();
     var btn = document.getElementById('bk-btn');
     var action = form.getAttribute('action');
-    if(action.indexOf('xkjwkybq') !== -1){
-      var msg = document.body.classList.contains('lang-en')
-        ? 'Form not connected yet. Email shout@studio33club.com or WhatsApp +39 334 7029456'
-        : 'Form non ancora collegato. Scrivi a shout@studio33club.com o via WhatsApp +39 334 7029456';
-      alert(msg); return;
-    }
     btn.disabled = true;
     fetch(action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
       .then(function(r){
