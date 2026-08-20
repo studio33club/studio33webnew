@@ -1,4 +1,4 @@
-<!-- VERSIONE 51 · pagina page-res -->
+<!-- VERSIONE 52 · pagina page-res -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -292,6 +292,7 @@ body.lang-en [data-lang="block-it"]{display:none}
 .drawer-links a{font-size:17.0px;letter-spacing:.06em;text-transform:uppercase;color:var(--w40);padding:1.1rem 0;border-bottom:var(--bds);transition:color .2s;text-decoration:none;display:block}
 .drawer-links a:hover{color:var(--w)}
 .drawer-links a:last-child{border-bottom:none}
+.drawer-links a.active{color:var(--w)!important;font-weight:600;border-bottom-color:var(--w)}
 .drawer-lang{display:flex;gap:1.2rem;font-size:13.0px;letter-spacing:.2em;text-transform:uppercase;color:var(--w30);padding-top:1.5rem;border-top:var(--bd);margin-top:auto}
 .drawer-lang span{cursor:pointer;transition:color .2s}
 .drawer-lang span:hover{color:var(--w)}
@@ -1289,7 +1290,7 @@ body.lang-fr [data-lang="fr"]{display:inline}
     <li><a href="../formazione/"      id="nl-form"><span data-lang="it">Formazione</span><span data-lang="en">Training</span>
     <span data-lang="es">Formación</span>
     <span data-lang="fr">Formation</span></a></li>
-    <li><a href="../resonance/"       id="nl-res">Resonance</a></li>
+    <li><a href="../resonance/"       id="nl-res" class="active">Resonance</a></li>
     <li><a href="../contatti/"      id="nl-book" class="nav-book"><span data-lang="it">Contattaci</span><span data-lang="en">Contact</span>
     <span data-lang="es">Contáctanos</span>
     <span data-lang="fr">Contactez-nous</span></a></li>
@@ -1322,7 +1323,7 @@ body.lang-fr [data-lang="fr"]{display:inline}
     <a href="../formazione/"><span data-lang="it">Formazione</span><span data-lang="en">Training</span>
     <span data-lang="es">Formación</span>
     <span data-lang="fr">Formation</span></a>
-    <a href="../resonance/">Resonance</a>
+    <a href="../resonance/" class="active">Resonance</a>
     <a href="../contatti/" class="drawer-book"><span data-lang="it">Contattaci →</span><span data-lang="en">Contact →</span>
     <span data-lang="es">Contáctanos →</span>
     <span data-lang="fr">Contactez-nous →</span></a>
