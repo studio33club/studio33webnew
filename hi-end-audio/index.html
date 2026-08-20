@@ -1,4 +1,4 @@
-<!-- VERSIONE 45 · pagina page-audio -->
+<!-- VERSIONE 46 · pagina page-audio -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -1827,9 +1827,28 @@ document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeDraw
 
 
 (function(){
-  var saved = null;
-  try { saved = sessionStorage.getItem('s33lang'); } catch(e) {}
-  setLang(['it','en','es','fr'].indexOf(saved) >= 0 ? saved : 'it');
+  var lang = null;
+  // 1) lingua suggerita da Cloudflare (redirect rule geo -> ?lang=xx)
+  try {
+    var qp = new URLSearchParams(location.search).get('lang');
+    if(['it','en','es','fr'].indexOf(qp) >= 0) lang = qp;
+  } catch(e) {}
+  // 2) altrimenti, scelta salvata in questa sessione di navigazione
+  if(!lang){
+    try {
+      var saved = sessionStorage.getItem('s33lang');
+      if(['it','en','es','fr'].indexOf(saved) >= 0) lang = saved;
+    } catch(e) {}
+  }
+  setLang(lang || 'it');
+  // pulisce ?lang= dall'URL visibile, senza ricaricare la pagina
+  if(lang && location.search.indexOf('lang=') !== -1){
+    try {
+      var url = new URL(location.href);
+      url.searchParams.delete('lang');
+      history.replaceState(null, '', url.pathname + url.search + url.hash);
+    } catch(e) {}
+  }
 })();
 
 // ── COOKIE CONSENT ──
