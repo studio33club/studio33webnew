@@ -1,4 +1,4 @@
-<!-- VERSIONE 45 · pagina page-res -->
+<!-- VERSIONE 49 · pagina page-res -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -147,6 +147,8 @@ body.lang-en [data-lang="block-it"]{display:none}
 .press-grid{display:grid;grid-template-columns:1fr 1fr 1fr}
 .press-card{padding:2.2rem 2rem;border-right:var(--bds);border-bottom:var(--bds);transition:background .2s;text-decoration:none;color:inherit;display:block}
 .press-card:hover{background:rgba(26,26,26,0.06)}
+.press-static{cursor:default}
+.press-card.press-static:hover{background:none;opacity:1}
 .press-card:nth-child(3n){border-right:none}
 .press-outlet{font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,26,26,0.88);margin-bottom:.7rem;font-family:var(--fb);display:flex;align-items:center;gap:.5rem}
 .press-outlet::before{content:'';width:4px;height:4px;border-radius:50%;background:rgba(26,26,26,0.48);flex-shrink:0}
@@ -1356,13 +1358,13 @@ body.lang-fr [data-lang="fr"]{display:inline}
     </div>
     <div>
       <p style="font-size:20.0px;line-height:1.78;color:rgba(26,26,26,0.88);font-family:var(--fb);margin-bottom:1.2rem">
-        <span data-lang="it">Dalla copertina di Monocle al tweet di Oswalds Mill Audio e di tanti altri social creators. Dal Foglio Quotidiano ad AF Digitale, Zero.eu, Pink Noises, Area Arch. Lo spazio di Trastevere che ha catturato l'attenzione italiana ed internazionale.</span>
-        <span data-lang="en">From Monocle's pages to Oswalds Mill Audio's tweet and those of many other social creators. From Il Foglio to AF Digitale, Zero.eu, Pink Noises, Area Arch. The Trastevere space that captured the attention in Italy and abroad.</span>
-        <span data-lang="es">De la portada de Monocle al tweet de Oswalds Mill Audio y de muchos otros creadores en redes. De Il Foglio Quotidiano a AF Digitale, Zero.eu, Pink Noises, Area Arch. El espacio de Trastevere que ha captado la atención italiana e internacional.</span>
-        <span data-lang="fr">De la couverture de Monocle au tweet d'Oswalds Mill Audio et de nombreux autres créateurs sur les réseaux. D'Il Foglio Quotidiano à AF Digitale, Zero.eu, Pink Noises, Area Arch. L'espace de Trastevere qui a retenu l'attention italienne et internationale.</span>
+        <span data-lang="it">Da Rai1 alla guida di Louis Vuitton, dalla copertina di Monocle al tweet di Oswalds Mill Audio e di tanti altri social creators. Dal Foglio Quotidiano ad AF Digitale, Zero.eu, Pink Noises, Area Arch. Lo spazio di Trastevere che ha catturato l'attenzione italiana ed internazionale.</span>
+        <span data-lang="en">From Rai1 to the Louis Vuitton guide, from Monocle's pages to Oswalds Mill Audio's tweet and those of many other social creators. From Il Foglio to AF Digitale, Zero.eu, Pink Noises, Area Arch. The Trastevere space that captured the attention in Italy and abroad.</span>
+        <span data-lang="es">De Rai1 a la guía de Louis Vuitton, de la portada de Monocle al tweet de Oswalds Mill Audio y de muchos otros creadores en redes. De Il Foglio Quotidiano a AF Digitale, Zero.eu, Pink Noises, Area Arch. El espacio de Trastevere que ha captado la atención italiana e internacional.</span>
+        <span data-lang="fr">De Rai1 au guide Louis Vuitton, de la couverture de Monocle au tweet d'Oswalds Mill Audio et de nombreux autres créateurs sur les réseaux. D'Il Foglio Quotidiano à AF Digitale, Zero.eu, Pink Noises, Area Arch. L'espace de Trastevere qui a retenu l'attention italienne et internationale.</span>
       </p>
       <div style="display:flex;gap:2rem;flex-wrap:wrap;padding-top:.8rem;border-top:.5px solid rgba(26,26,26,0.74)">
-        <div><div style="font-family:var(--fd);font-size:31.0px;font-weight:400;color:rgba(26,26,26,0.88)">12+</div><div class="lbl"><span data-lang="it">Testate</span><span data-lang="en">Outlets</span>
+        <div><div style="font-family:var(--fd);font-size:31.0px;font-weight:400;color:rgba(26,26,26,0.88)">14+</div><div class="lbl"><span data-lang="it">Testate</span><span data-lang="en">Outlets</span>
     <span data-lang="es">Medios</span>
     <span data-lang="fr">Médias</span></div></div>
         <div><div style="font-family:var(--fd);font-size:31.0px;font-weight:400;color:rgba(26,26,26,0.88)">IT · EN</div><div class="lbl"><span data-lang="it">Copertura</span><span data-lang="en">Coverage</span>
@@ -1372,6 +1374,35 @@ body.lang-fr [data-lang="fr"]{display:inline}
     <span data-lang="es">Desde el lanzamiento</span>
     <span data-lang="fr">Depuis le lancement</span></div></div>
       </div>
+    </div>
+  </div>
+
+  <div class="split" style="border-top:var(--bd)">
+    <button class="split-img" onclick="openMedia(17)" aria-label="Studio 33 su Rai1 - Top, tutto quanto fa tendenza" style="border:none;padding:0;background:#000;cursor:pointer;display:block;width:100%;text-align:left;font:inherit;color:inherit">
+      <div class="split-img-bg" style="background-image:url('https://i.vimeocdn.com/video/1361028730-c451b619a49ae31335ac9d78c27e6e31d8576f202fd7b16047bff336b6da0b45-d_1280?region=us');filter:brightness(.78)"></div>
+      <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:64px;height:64px;border:1px solid rgba(255,255,255,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.25);z-index:2">
+        <div style="border-style:solid;border-width:10px 0 10px 16px;border-color:transparent transparent transparent #fff;margin-left:4px"></div>
+      </div>
+      <div style="position:absolute;top:1.2rem;left:1.2rem;padding:.35rem .9rem;background:rgba(0,0,0,.6);color:#fff;font-family:var(--fb);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;z-index:2">RAI1 · TOP</div>
+    </button>
+    <div class="split-text">
+      <div class="lbl" style="margin-bottom:1.2rem">RAI1 · Top — <span data-lang="it">tutto quanto fa tendenza</span><span data-lang="en">everything that's trending</span>
+    <span data-lang="es">todo lo que está de moda</span>
+    <span data-lang="fr">tout ce qui fait tendance</span> · 30.01.2022</div>
+      <h2 class="split-h2">Studio 33 <em><span data-lang="it">in prima serata nazionale.</span><span data-lang="en">on national primetime TV.</span>
+    <span data-lang="es">en horario estelar nacional.</span>
+    <span data-lang="fr">en prime time national.</span></em></h2>
+      <div class="split-body">
+        <p><span data-lang="it">Rai1, la principale rete televisiva italiana, ha dedicato un servizio a Studio 33 all'interno di "Top — Tutto quanto fa tendenza": lo spazio di Trastevere raccontato al pubblico più ampio della televisione italiana.</span>
+        <span data-lang="en">Rai1, Italy's leading television network, dedicated a segment to Studio 33 on "Top — Tutto quanto fa tendenza": the Trastevere space introduced to Italian television's widest audience.</span>
+        <span data-lang="es">Rai1, la principal cadena de televisión italiana, dedicó un reportaje a Studio 33 dentro de "Top — Tutto quanto fa tendenza": el espacio de Trastevere presentado al público más amplio de la televisión italiana.</span>
+        <span data-lang="fr">Rai1, la principale chaîne de télévision italienne, a consacré un reportage à Studio 33 dans "Top — Tutto quanto fa tendenza" : l'espace de Trastevere présenté au plus large public de la télévision italienne.</span></p>
+      </div>
+      <button onclick="openMedia(17)" class="btn" style="margin-top:1.6rem;border:none;background:none;cursor:pointer;padding:0;padding-bottom:3px;font:inherit">
+        <span data-lang="it">Guarda il servizio →</span><span data-lang="en">Watch the segment →</span>
+    <span data-lang="es">Ver el reportaje →</span>
+    <span data-lang="fr">Voir le reportage →</span>
+      </button>
     </div>
   </div>
 
@@ -1423,6 +1454,35 @@ body.lang-fr [data-lang="fr"]{display:inline}
     </div>
   </div>
 
+  <div class="col2" style="border-top:var(--bd)">
+    <div class="split-img" style="min-height:480px">
+      <div class="split-img-bg" data-bg="../resonance-lv-page.jpg" style=""></div>
+    </div>
+    <div style="padding:3.5rem 3rem;display:flex;flex-direction:column;justify-content:space-between;gap:2rem">
+      <div>
+        <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.4rem">
+          <img src="../resonance-lv-cover.jpg" alt="Louis Vuitton City Guide — Rome" style="width:56px;height:auto;border:.5px solid rgba(26,26,26,0.18);flex-shrink:0">
+          <div class="lbl">Louis Vuitton City Guide · Rome</div>
+        </div>
+        <h2 style="font-family:var(--fd);font-size:31.0px;font-weight:400;line-height:1.3;color:var(--w);margin-bottom:1rem">Sound Bites — <span data-lang="it">la recensione</span><span data-lang="en">the review</span>
+    <span data-lang="es">la reseña</span>
+    <span data-lang="fr">la critique</span></h2>
+        <blockquote style="font-family:var(--fd);font-size:20.0px;font-style:italic;line-height:1.55;color:rgba(26,26,26,0.88);margin-bottom:1.2rem;padding-left:1rem;border-left:2px solid rgba(26,26,26,0.18)">
+          "Studio 33 surges up in the heart of Trastevere like a UFO, one of those places that is a feast for the eyes, ears and even the eardrums. Here, high-fidelity is venerated, sacred, a ritual."
+        </blockquote>
+        <p style="font-size:17.0px;line-height:1.75;color:rgba(26,26,26,0.88);font-family:var(--fb)">
+          <span data-lang="it">La celebre guida di Louis Vuitton dedica un ritratto a Studio 33, raccontando la trasformazione dello storico studio fotografico firmata da Ana Gugić, l'impianto Oswalds Mill Audio e le sessioni di ascolto su appuntamento. La recensione si chiude così: <em>"We're telling you, it's a UFO: an unidentified festive object."</em></span>
+          <span data-lang="en">The celebrated Louis Vuitton guide dedicates a feature to Studio 33, describing Ana Gugić's transformation of the historic photography studio, the Oswalds Mill Audio system and the by-appointment listening sessions. The review closes with: <em>"We're telling you, it's a UFO: an unidentified festive object."</em></span>
+          <span data-lang="es">La célebre guía de Louis Vuitton dedica un retrato a Studio 33, contando la transformación del histórico estudio fotográfico firmada por Ana Gugić, el sistema Oswalds Mill Audio y las sesiones de escucha con cita previa. La reseña se cierra así: <em>"We're telling you, it's a UFO: an unidentified festive object."</em></span>
+          <span data-lang="fr">Le célèbre guide Louis Vuitton consacre un portrait à Studio 33, racontant la transformation du studio photographique historique signée Ana Gugić, le système Oswalds Mill Audio et les sessions d'écoute sur rendez-vous. La critique se termine ainsi : <em>"We're telling you, it's a UFO: an unidentified festive object."</em></span>
+        </p>
+      </div>
+      <div class="lbl"><span data-lang="it">Guida cartacea</span><span data-lang="en">Print guide</span>
+    <span data-lang="es">Guía impresa</span>
+    <span data-lang="fr">Guide imprimé</span> · Louis Vuitton City Guide — Rome</div>
+    </div>
+  </div>
+
   <section style="border-top:var(--bd)">
     <div class="sec-header">
       <div class="lbl"><span data-lang="it">Rassegna stampa</span><span data-lang="en">Press coverage</span>
@@ -1443,7 +1503,7 @@ body.lang-fr [data-lang="fr"]{display:inline}
     <span data-lang="es">Leer →</span>
     <span data-lang="fr">Lire →</span></span>
       </a>
-      <a class="press-card" href="https://www.pinknoises.it/studio33-una-musical-supernova-a-trastevere/" target="_blank" rel="noopener">
+      <div class="press-card press-static">
         <div class="press-outlet">Pink Noises</div>
         <div class="press-title"><span data-lang="it">Una musical supernova a Trastevere</span><span data-lang="en">A musical supernova in Trastevere</span>
     <span data-lang="es">Una musical supernova en Trastevere</span>
@@ -1451,10 +1511,7 @@ body.lang-fr [data-lang="fr"]{display:inline}
         <p class="press-desc"><span data-lang="it">La rivista di musica elettronica e cultura sonora dedica un lungo profilo allo spazio e alla sua filosofia di ascolto.</span><span data-lang="en">The electronic music and sound culture magazine devotes a long feature to the space and its listening philosophy.</span>
     <span data-lang="es">La revista de música electrónica y cultura sonora dedica un largo perfil al espacio y a su filosofía de escucha.</span>
     <span data-lang="fr">Le magazine de musique électronique et de culture sonore consacre un long portrait à l'espace et à sa philosophie d'écoute.</span></p>
-        <span class="press-link"><span data-lang="it">Leggi →</span><span data-lang="en">Read →</span>
-    <span data-lang="es">Leer →</span>
-    <span data-lang="fr">Lire →</span></span>
-      </a>
+      </div>
       <a class="press-card" href="https://www.afdigitale.it/oswalds-mill-audiol-back-to-the-future-ritorno-al-futuro-del-suono/" target="_blank" rel="noopener">
         <div class="press-outlet">AF Digitale</div>
         <div class="press-title">Oswalds Mill Audio — back to the future</div>
@@ -1465,7 +1522,7 @@ body.lang-fr [data-lang="fr"]{display:inline}
     <span data-lang="es">Leer →</span>
     <span data-lang="fr">Lire →</span></span>
       </a>
-      <a class="press-card" href="https://www.pressreader.com/italy/il-foglio-quotidiano/20201015/281767041698834" target="_blank" rel="noopener">
+      <div class="press-card press-static">
         <div class="press-outlet">Il Foglio Quotidiano</div>
         <div class="press-title">Studio 33 <span data-lang="it">su</span><span data-lang="en">in</span>
     <span data-lang="es">en</span>
@@ -1473,10 +1530,7 @@ body.lang-fr [data-lang="fr"]{display:inline}
         <p class="press-desc"><span data-lang="it">Il quotidiano culturale italiano dedica uno spazio allo studio romano come esperienza culturale unica nel panorama cittadino.</span><span data-lang="en">The Italian cultural daily features Studio 33 as a unique cultural experience in Rome's landscape.</span>
     <span data-lang="es">El diario cultural italiano dedica un espacio al estudio romano como experiencia cultural única en el panorama de la ciudad.</span>
     <span data-lang="fr">Le quotidien culturel italien consacre un espace au studio romain comme expérience culturelle unique dans le paysage de la ville.</span></p>
-        <span class="press-link"><span data-lang="it">Leggi →</span><span data-lang="en">Read →</span>
-    <span data-lang="es">Leer →</span>
-    <span data-lang="fr">Lire →</span></span>
-      </a>
+      </div>
       <a class="press-card" href="https://www.area-arch.it/studio-33-roma-ana-gugic/" target="_blank" rel="noopener">
         <div class="press-outlet">Area — Arch</div>
         <div class="press-title">Studio 33 Roma — Ana Gugić</div>
@@ -1507,13 +1561,13 @@ body.lang-fr [data-lang="fr"]{display:inline}
     <span data-lang="es">Artistas y producciones destacadas</span>
     <span data-lang="fr">Artistes et productions marquantes</span></div></div>
     <div class="video-grid">
-      <a class="vcard" href="https://studio33club.com/2025/06/05/alex-britti-a-studio-33/" target="_blank" rel="noopener"><div class="vbg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2025/06/IMG_4270.jpeg?resize=900%2C675&ssl=1" style=""></div><div class="vcontent"><div class="vtag"><span data-lang="it">Giugno</span><span data-lang="en">June</span>
+      <a class="vcard" href="../works/"><div class="vbg" data-bg="../res-alex-britti.jpg" style=""></div><div class="vcontent"><div class="vtag"><span data-lang="it">Giugno</span><span data-lang="en">June</span>
     <span data-lang="es">Junio</span>
     <span data-lang="fr">Juin</span> 2025</div><div class="vname">Alex Britti</div></div></a>
-      <a class="vcard" href="https://studio33club.com/2025/05/15/giorgio-poi-e-luca-marinelli-in-studio-33/" target="_blank" rel="noopener"><div class="vbg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2025/05/Screenshot-2025-05-15-alle-09.24.51.png?resize=500%2C489&ssl=1" style=""></div><div class="vcontent"><div class="vtag"><span data-lang="it">Maggio</span><span data-lang="en">May</span>
+      <a class="vcard" href="../works/"><div class="vbg" data-bg="../res-giorgio-poi.jpg" style=""></div><div class="vcontent"><div class="vtag"><span data-lang="it">Maggio</span><span data-lang="en">May</span>
     <span data-lang="es">Mayo</span>
     <span data-lang="fr">Mai</span> 2025</div><div class="vname">Giorgio Poi &amp; Luca Marinelli</div></div></a>
-      <a class="vcard" href="https://studio33club.com/2025/10/28/jeremiah-chiu-marta-sofia-honer-live/" target="_blank" rel="noopener"><div class="vbg" data-bg="https://i0.wp.com/studio33club.com/wp-content/uploads/2025/10/hq720.jpg?resize=500%2C281&ssl=1" style=""></div><div class="vcontent"><div class="vtag"><span data-lang="it">Ottobre</span><span data-lang="en">October</span>
+      <a class="vcard" href="../works/"><div class="vbg" data-bg="../res-jeremiah-chiu.jpg" style=""></div><div class="vcontent"><div class="vtag"><span data-lang="it">Ottobre</span><span data-lang="en">October</span>
     <span data-lang="es">Octubre</span>
     <span data-lang="fr">Octobre</span> 2025</div><div class="vname">Jeremiah Chiu &amp; Marta Sofia Honer</div></div></a>
     </div>
@@ -1714,14 +1768,18 @@ function lcScroll(dir){
 
 
 // ── HAPPENING: player unificato mp4 + YouTube ──
-var mediaList = [{"k": "yt", "id": "TAIl1kGzfgY"}, {"k": "yt", "id": "cAbYwjUUnNM"}, {"k": "yt", "id": "Ly_N43oBCjY"}, {"k": "yt", "id": "lToVif3BLOM"}, {"k": "yt", "id": "CyyuGcd8tzI"}, {"k": "yt", "id": "oFecVPRzqOk"}, {"k": "yt", "id": "BgwqRhtAS-E"}, {"k": "yt", "id": "vatRi9NDiOI"}, {"k": "yt", "id": "yDXAGZNv6ro"}, {"k": "yt", "id": "lKp_zMsbI-I"}, {"k": "yt", "id": "fHH1BdIk1X8"}, {"k": "yt", "id": "1KyvuRJh6tQ"}, {"k": "yt", "id": "WyDrpVguz28"}, {"k": "yt", "id": "6tKxVS9Fi8A"}, {"k": "yt", "id": "B6BxBXnB2pM"}, {"k": "yt", "id": "rFxvfyGsTyc"}, {"k": "yt", "id": "2wJ0v4LIan8"}];
+var mediaList = [{"k": "yt", "id": "TAIl1kGzfgY"}, {"k": "yt", "id": "cAbYwjUUnNM"}, {"k": "yt", "id": "Ly_N43oBCjY"}, {"k": "yt", "id": "lToVif3BLOM"}, {"k": "yt", "id": "CyyuGcd8tzI"}, {"k": "yt", "id": "oFecVPRzqOk"}, {"k": "yt", "id": "BgwqRhtAS-E"}, {"k": "yt", "id": "vatRi9NDiOI"}, {"k": "yt", "id": "yDXAGZNv6ro"}, {"k": "yt", "id": "lKp_zMsbI-I"}, {"k": "yt", "id": "fHH1BdIk1X8"}, {"k": "yt", "id": "1KyvuRJh6tQ"}, {"k": "yt", "id": "WyDrpVguz28"}, {"k": "yt", "id": "6tKxVS9Fi8A"}, {"k": "yt", "id": "B6BxBXnB2pM"}, {"k": "yt", "id": "rFxvfyGsTyc"}, {"k": "yt", "id": "2wJ0v4LIan8"}, {"k": "vm", "id": "671685829"}];
 function openMedia(i){
   var m = mediaList[i];
   if(!m || !m.id) return;
   var ov = document.getElementById('vmodal');
   var yt = document.getElementById('ytframe');
   yt.style.display = 'block';
-  yt.src = 'https://www.youtube-nocookie.com/embed/' + m.id + '?autoplay=1&rel=0';
+  if(m.k === 'vm'){
+    yt.src = 'https://player.vimeo.com/video/' + m.id + '?autoplay=1';
+  } else {
+    yt.src = 'https://www.youtube-nocookie.com/embed/' + m.id + '?autoplay=1&rel=0';
+  }
   ov.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
