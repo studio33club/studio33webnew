@@ -1,4 +1,4 @@
-<!-- VERSIONE 48 · pagina page-location -->
+<!-- VERSIONE 49 · pagina page-location -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -1551,10 +1551,10 @@ body.lang-fr [data-lang="fr"]{display:inline}
   <!-- VIDEO ARKAGE -->
   <div class="loc-video">
     <div>
-      <a class="loc-video-thumb" href="https://www.youtube.com/watch?v=w2tf1YFWsoU" target="_blank" rel="noopener">
+      <button type="button" class="loc-video-thumb" onclick="openMedia(17)" aria-label="Studio produzione video Roma – Arkage con Renzo Arbore – Studio 33 Trastevere" style="display:block;width:100%;border:none;padding:0;background:none;text-align:left;font:inherit;color:inherit">
         <img src="https://img.youtube.com/vi/w2tf1YFWsoU/hqdefault.jpg" alt="Studio produzione video Roma – Arkage con Renzo Arbore – Studio 33 Trastevere" loading="lazy" style="width:100%;height:100%;object-fit:cover" onerror="this.src='https://img.youtube.com/vi/w2tf1YFWsoU/mqdefault.jpg'">
         <div class="loc-video-play"><div class="loc-video-play-btn"></div></div>
-      </a>
+      </button>
     </div>
     <div>
       <div class="lbl" style="margin-bottom:1.2rem"><span data-lang="it">Studio 33 in azione</span><span data-lang="en">Studio 33 in action</span>
@@ -1840,7 +1840,7 @@ function lcScroll(dir){
 
 
 // ── HAPPENING: player unificato mp4 + YouTube ──
-var mediaList = [{"k": "yt", "id": "TAIl1kGzfgY"}, {"k": "yt", "id": "cAbYwjUUnNM"}, {"k": "yt", "id": "Ly_N43oBCjY"}, {"k": "yt", "id": "lToVif3BLOM"}, {"k": "yt", "id": "CyyuGcd8tzI"}, {"k": "yt", "id": "oFecVPRzqOk"}, {"k": "yt", "id": "BgwqRhtAS-E"}, {"k": "yt", "id": "vatRi9NDiOI"}, {"k": "yt", "id": "yDXAGZNv6ro"}, {"k": "yt", "id": "lKp_zMsbI-I"}, {"k": "yt", "id": "fHH1BdIk1X8"}, {"k": "yt", "id": "1KyvuRJh6tQ"}, {"k": "yt", "id": "WyDrpVguz28"}, {"k": "yt", "id": "6tKxVS9Fi8A"}, {"k": "yt", "id": "B6BxBXnB2pM"}, {"k": "yt", "id": "rFxvfyGsTyc"}, {"k": "yt", "id": "2wJ0v4LIan8"}];
+var mediaList = [{"k": "yt", "id": "TAIl1kGzfgY"}, {"k": "yt", "id": "cAbYwjUUnNM"}, {"k": "yt", "id": "Ly_N43oBCjY"}, {"k": "yt", "id": "lToVif3BLOM"}, {"k": "yt", "id": "CyyuGcd8tzI"}, {"k": "yt", "id": "oFecVPRzqOk"}, {"k": "yt", "id": "BgwqRhtAS-E"}, {"k": "yt", "id": "vatRi9NDiOI"}, {"k": "yt", "id": "yDXAGZNv6ro"}, {"k": "yt", "id": "lKp_zMsbI-I"}, {"k": "yt", "id": "fHH1BdIk1X8"}, {"k": "yt", "id": "1KyvuRJh6tQ"}, {"k": "yt", "id": "WyDrpVguz28"}, {"k": "yt", "id": "6tKxVS9Fi8A"}, {"k": "yt", "id": "B6BxBXnB2pM"}, {"k": "yt", "id": "rFxvfyGsTyc"}, {"k": "yt", "id": "2wJ0v4LIan8"}, {"k": "yt", "id": "w2tf1YFWsoU"}];
 function openMedia(i){
   var m = mediaList[i];
   if(!m || !m.id) return;
