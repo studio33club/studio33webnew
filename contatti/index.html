@@ -1742,12 +1742,6 @@ document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeVid(
     e.preventDefault();
     var btn = document.getElementById('bk-btn');
     var action = form.getAttribute('action');
-    if(action.indexOf('xkjwkybq') !== -1){
-      var msg = document.body.classList.contains('lang-en')
-        ? 'Form not connected yet. Email shout@studio33club.com or WhatsApp +39 334 7029456'
-        : 'Form non ancora collegato. Scrivi a shout@studio33club.com o via WhatsApp +39 334 7029456';
-      alert(msg); return;
-    }
     btn.disabled = true;
     fetch(action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
       .then(function(r){
